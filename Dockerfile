@@ -9,7 +9,7 @@ ENV BUILD_DEPS="git autoconf libtool pkg-config gcc g++ make  libssl-dev libpam0
     libjpeg-dev libx11-dev libxfixes-dev libxrandr-dev  flex bison libxml2-dev \
     intltool xsltproc xutils-dev python-libxml2 xutils libfuse-dev \
     libmp3lame-dev nasm libpixman-1-dev xserver-xorg-dev \
-	build-essential dpkg-dev pulseaudio libpulse-dev
+    build-essential dpkg-dev pulseaudio libpulse-dev"
 RUN apt -yy install sudo apt-utils software-properties-common $BUILD_DEPS
     
 WORKDIR /tmp
@@ -51,9 +51,9 @@ RUN apt -y install --no-install-recommends \
     wget \
     xauth \
     xrdp \
-	xorgxrdp \
-	xprintidle \
-	xserver-xorg-legacy \
+    xorgxrdp \
+    xprintidle \
+    xserver-xorg-legacy \
  && apt -y remove xscreensaver \
  && apt -y autoremove \
  && apt -y autoclean \
