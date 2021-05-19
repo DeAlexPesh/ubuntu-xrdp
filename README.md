@@ -3,13 +3,13 @@
 <pre><code>sudo mkdir -p /app/{images/remote,remote/home/ubuntu} && \
 sudo chown 999:999 /app/remote/home/ubuntu && \
 cd ~ && \
-sudo git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
+git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
 sudo mv ~/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
 sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
-sudo rm -rf ~/ubuntu-xrdp && \
-sudo find /app/images/remote/ -type f -iname "*.sh" -exec chmod +x {} \;
+rm -rf ~/ubuntu-xrdp && \
+sudo chmod -R 775 /app/images/remote/
 </code></pre>
 
 <pre>sudo nano /app/remote/users.list
