@@ -1,9 +1,6 @@
-<pre>
--------
-xRDP Terminal service
--------
+## xRDP Terminal service
 
-sudo mkdir -p /app/{images/remote,remote/home/ubuntu} && \
+<pre><code>sudo mkdir -p /app/{images/remote,remote/home/ubuntu} && \
 sudo chown 999:999 /app/remote/home/ubuntu && \
 cd ~ && \
 sudo git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
@@ -12,17 +9,20 @@ sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
 sudo rm -rf ~/ubuntu-xrdp
+</code></pre>
 
-sudo nano /app/remote/users.list
-// FORMAT: | id | username | password-hash | list-of-supplemental-groups |
-// GET HASH: openssl passwd -1 'PASSWORD'
+<pre><code>sudo nano /app/remote/users.list
+
+</code></pre>
+<pre><i>// FORMAT: | id | username | password-hash | list-of-supplemental-groups |
+// GET HASH: openssl passwd -1 'PASSWORD'</i>
 1001 link01 $1$ikxogJPH$8/8cRkq7T94Fjt4OVWncU1 sudo
 1002 link02 $1$uLaqZlMF$zY7//SH5NZlWnRMFM6Ni1/ sudo
-...
-N linkN
+<i>...
+N linkN</i>
+</pre>
 
-
-sudo bash -c 'cat \<\<EOT > /app/compose/remote.yml
+<pre><code>sudo bash -c 'cat &lt;&lt;EOT > /app/compose/remote.yml
 version: "3.5"
 services:
  remote: 
@@ -47,7 +47,12 @@ services:
   restart: always
 EOT' && \
 docker-compose -f /app/compose/remote.yml config
-docker-compose -p vnc -f /app/compose/remote.yml up -d
+</code></pre>
 
-sudo sed -i "4 s|^|#|" /app/compose/remote.yml
-</pre>
+<pre><code>docker-compose -p remote -f /app/compose/remote.yml up -d
+
+</code></pre>
+
+<pre><code>sudo sed -i "4 s|^|#|" /app/compose/remote.yml
+
+</code></pre>
