@@ -1,16 +1,17 @@
 FROM ubuntu:bionic as builder
 
 ARG DEBIAN_FRONTEND=noninteractive
+ARG PKG_CONFIG_PATH=/usr/lib/pkgconfig
 RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list \
- && apt -y update \
- && apt -yy upgrade
+ && apt-get -y update \
+ && apt-get -yy upgrade
  
 ENV BUILD_DEPS="git autoconf libtool pkg-config gcc g++ make  libssl-dev libpam0g-dev \
     libjpeg-dev libx11-dev libxfixes-dev libxrandr-dev  flex bison libxml2-dev \
     intltool xsltproc xutils-dev python-libxml2 xutils libfuse-dev \
     libmp3lame-dev nasm libpixman-1-dev xserver-xorg-dev \
     build-essential dpkg-dev pulseaudio libpulse-dev"
-RUN apt -yy install sudo apt-utils software-properties-common $BUILD_DEPS
+RUN apt-get -yy install sudo apt-utils software-properties-common $BUILD_DEPS
     
 WORKDIR /tmp
 RUN git clone --recursive https://github.com/neutrinolabs/xrdp.git \
@@ -33,11 +34,11 @@ RUN mkdir -p /tmp/so \
 
 FROM ubuntu:bionic
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt -y update \
- && apt -yy install locales \
+RUN apt-get -y update \
+ && apt-get -yy install locales \
  && localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.UTF8
-RUN apt -y install --no-install-recommends \
+RUN apt-get -y install --no-install-recommends \
     openbox \
     slock \
     chromium-browser \
@@ -54,9 +55,9 @@ RUN apt -y install --no-install-recommends \
     xorgxrdp \
     xprintidle \
     xserver-xorg-legacy \
- && apt -y remove xscreensaver \
- && apt -y autoremove \
- && apt -y autoclean \
+ && apt-get -y remove xscreensaver \
+ && apt-get -y autoremove \
+ && apt-get -y autoclean \
  && rm -rf /var/cache/apt /var/lib/apt/lists \
  && mkdir -p /var/lib/xrdp-pulseaudio-installer
 COPY --from=builder /tmp/so/module-xrdp-source.so /var/lib/xrdp-pulseaudio-installer
