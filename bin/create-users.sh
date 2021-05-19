@@ -1,4 +1,5 @@
 #!/bin/bash
+
 test -f /etc/users.list || exit 0
 while read -r id username hash groups; do
  if [ -z "$username" ]; then continue; fi
