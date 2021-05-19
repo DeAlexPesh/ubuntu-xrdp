@@ -10,7 +10,7 @@ sudo git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
 sudo mv ~/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
 sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
-sudo mv ~/buntu-xrdp/users.list /app/remote/users.list && \
+sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
 sudo rm -rf ~/ubuntu-xrdp
 
 sudo nano /app/remote/users.list
