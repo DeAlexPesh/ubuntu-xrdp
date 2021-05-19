@@ -4,7 +4,9 @@
 bash /usr/bin/create-users.sh
 
 # --- generate xrdp key
-if [ ! -f "/etc/xrdp/rsakeys.ini" ]; then; xrdp-keygen xrdp auto; fi
+if [ ! -f "/etc/xrdp/rsakeys.ini" ]; then
+ xrdp-keygen xrdp auto
+fi
 
 # --- generate certificate for tls connection
 if [ ! -f "/etc/xrdp/cert.pem" ]; then
