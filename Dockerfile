@@ -77,4 +77,4 @@ RUN mkdir /var/run/dbus \
 VOLUME ["/home"]
 EXPOSE 3389 9001
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-CMD ["supervisord"]
+CMD ["supervisord", "--user=0"]
