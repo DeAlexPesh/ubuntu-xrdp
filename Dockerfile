@@ -75,6 +75,6 @@ RUN mkdir /var/run/dbus \
  && echo "openbox-session" > /etc/skel/.Xsession
  
 VOLUME ["/home"]
-EXPOSE 3389 9001
+EXPOSE 3389
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-CMD ["supervisord", "--user=0"]
+CMD ["supervisord", "--user=0", "--configuration="/etc/supervisor/supervisord.conf"]
