@@ -2,7 +2,7 @@
 test -f /etc/users.list || exit 0
 while read id username hash groups; do
  if grep ^$username /etc/passwd; then
-  usermod -G $username $username
+  useradd -G $username $username
  else
   addgroup --gid $id $username
   useradd -m -u $id -s /bin/bash -g $username $username
