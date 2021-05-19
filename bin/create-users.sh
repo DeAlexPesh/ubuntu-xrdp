@@ -1,13 +1,12 @@
 #!/bin/bash
 test -f /etc/users.list || exit 0
 while read -r id username hash groups; do
- case "$id" in \#*) continue ;; esac
  if [ -z "$username" ]; then continue; fi
  if ! grep "^$username" /etc/passwd >/dev/null; then
   addgroup --gid "$id" "$username"
   useradd -m -u "$id" -s /bin/bash -g "$username" "$username"
  else
-  usermod -G '' "$username"
+  usermod -G "$username" "$username"
  fi
  echo "$username:$hash" | /usr/sbin/chpasswd -e
  if [ "$groups" ]; then
