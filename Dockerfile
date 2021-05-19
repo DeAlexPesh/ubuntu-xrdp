@@ -37,10 +37,7 @@ RUN apt-get -y update \
  && apt-get -yy install locales \
  && localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.UTF8
-RUN apt-get -y install --no-install-recommends \
-    openbox \
-    slock \
-    chromium-browser \
+RUN apt-get -y install \
     ca-certificates \
     crudini \
     less \
@@ -53,7 +50,10 @@ RUN apt-get -y install --no-install-recommends \
     xrdp \
     xorgxrdp \
     xprintidle \
-    xserver-xorg-legacy \
+ && apt-get -y install --no-install-recommends \
+    openbox \
+    slock \
+    chromium-browser \
  && apt-get -y remove xscreensaver \
  && apt-get -y autoremove \
  && apt-get -y autoclean \
