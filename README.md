@@ -8,7 +8,8 @@ sudo mv ~/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
 sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
-sudo rm -rf ~/ubuntu-xrdp
+sudo rm -rf ~/ubuntu-xrdp && \
+sudo find /app/images/remote/ -type f -iname "*.sh" -exec chmod +x {} \;
 </code></pre>
 
 <pre>sudo nano /app/remote/users.list
