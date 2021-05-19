@@ -1,3 +1,4 @@
+<pre>
 -------
 xRDP Terminal service
 -------
@@ -48,5 +49,4 @@ docker-compose -f /app/compose/remote.yml config
 docker-compose -p vnc -f /app/compose/remote.yml up -d
 
 sudo sed -i "4 s|^|#|" /app/compose/remote.yml
-
- 
+</pre>
