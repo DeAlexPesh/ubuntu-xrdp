@@ -22,7 +22,7 @@ sudo nano /app/remote/users.list
 N linkN
 
 
-sudo bash -c 'cat <<EOT > /app/compose/remote.yml
+sudo bash -c 'cat \<\<EOT > /app/compose/remote.yml
 version: "3.5"
 services:
  remote: 
