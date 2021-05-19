@@ -1,0 +1,23 @@
+version: "3.5"
+services:
+ remote: 
+  build: /app/images/remote
+  image: images/remote:mode
+  container_name: "remote"
+  hostname: remote
+  shm_size: 1g
+  ports:
+   - "3389:3389"
+  volumes:
+   - /app/remote/home/:/home/
+   - /app/remote/users.list:/etc/users.list:ro
+  environment:
+   IDLETIME: 11
+  network_mode: bridge
+  logging:
+   driver: "json-file"
+   options:
+    max-size: "200k"
+    max-file: "5"
+  restart: always
+  
