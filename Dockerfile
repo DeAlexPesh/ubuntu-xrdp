@@ -1,7 +1,6 @@
 FROM ubuntu:bionic as builder
 
 ARG DEBIAN_FRONTEND=noninteractive
-ARG PKG_CONFIG_PATH=/usr/lib/pkgconfig
 RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list \
  && apt-get -y update \
  && apt-get -yy upgrade
@@ -16,8 +15,8 @@ RUN apt-get -yy install sudo apt-utils software-properties-common $BUILD_DEPS
 WORKDIR /tmp
 RUN git clone --recursive https://github.com/neutrinolabs/xrdp.git \
  && git clone --recursive https://github.com/neutrinolabs/pulseaudio-module-xrdp.git \
- && apt build-dep -yy pulseaudio \
- && apt source pulseaudio
+ && apt-get build-dep -yy pulseaudio \
+ && apt-get source pulseaudio
 WORKDIR /tmp/pulseaudio-11.1
 RUN ./configure
 WORKDIR /tmp/xrdp
