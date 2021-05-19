@@ -63,7 +63,7 @@ COPY --from=builder /tmp/so/module-xrdp-source.so /var/lib/xrdp-pulseaudio-insta
 COPY --from=builder /tmp/so/module-xrdp-sink.so /var/lib/xrdp-pulseaudio-installer
 ADD bin /usr/bin
 ADD etc /etc
-ADD autostart /etc/xdg/autostart
+# ADD autostart /etc/xdg/autostart
 
 RUN mkdir /var/run/dbus \
  && cp /etc/X11/xrdp/xorg.conf /etc/X11 \
