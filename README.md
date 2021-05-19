@@ -11,10 +11,9 @@ sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
 sudo rm -rf ~/ubuntu-xrdp
 </code></pre>
 
-<pre><code>sudo nano /app/remote/users.list
+<pre>sudo nano /app/remote/users.list
 
-</code></pre>
-<pre><i>// FORMAT: | id | username | password-hash | list-of-supplemental-groups |
+<i>// FORMAT: | id | username | password-hash | list-of-supplemental-groups |
 // GET HASH: openssl passwd -1 'PASSWORD'</i>
 1001 link01 $1$ikxogJPH$8/8cRkq7T94Fjt4OVWncU1 sudo
 1002 link02 $1$uLaqZlMF$zY7//SH5NZlWnRMFM6Ni1/ sudo
