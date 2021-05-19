@@ -5,12 +5,13 @@ xRDP Terminal service
 
 sudo mkdir -p /app/{images/remote,remote/home/ubuntu} && \
 sudo chown 999:999 /app/remote/home/ubuntu && \
+cd ~ && \
 sudo git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
-sudo mv /app/images/remote/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
-sudo mv /app/images/remote/ubuntu-xrdp/bin /app/images/remote/bin && \
-sudo mv /app/images/remote/ubuntu-xrdp/etc /app/images/remote/etc && \
-sudo mv /app/images/remoteu/buntu-xrdp/users.list /app/remote/users.list && \
-sudo rm -rf /app/images/remoteu/ubuntu-xrdp
+sudo mv ~/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
+sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
+sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
+sudo mv ~/buntu-xrdp/users.list /app/remote/users.list && \
+sudo rm -rf ~/ubuntu-xrdp
 
 sudo nano /app/remote/users.list
 // FORMAT: | id | username | password-hash | list-of-supplemental-groups |
