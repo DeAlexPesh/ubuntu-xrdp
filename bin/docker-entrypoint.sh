@@ -3,6 +3,8 @@
 # --- add users from users.list
 bash /usr/bin/create-users.sh
 
+mkdir -p /var/run/sshd
+
 # --- generate xrdp key
 if [ ! -f "/etc/xrdp/rsakeys.ini" ]; then
  xrdp-keygen xrdp auto

@@ -54,6 +54,11 @@ RUN apt-get -y install \
     openbox \
     slock \
     chromium-browser \
+ && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
+ && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
+ && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list' \
+ && rm microsoft.gpg \
+ && apt-get -y install microsoft-edge-beta \
  && apt-get -y remove xscreensaver \
  && apt-get -y autoremove \
  && apt-get -y autoclean \
@@ -75,6 +80,6 @@ RUN mkdir /var/run/dbus \
  && echo "openbox-session" > /etc/skel/.Xsession
  
 VOLUME ["/home"]
-EXPOSE 3389
+EXPOSE 3389 9001
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
-CMD ["supervisord", "--user=0", "--configuration="/etc/supervisor/supervisord.conf"]
+CMD ["supervisord", "--configuration=/etc/supervisor/supervisord.conf"]
