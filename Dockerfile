@@ -2,15 +2,15 @@ FROM ubuntu:bionic as builder
 
 ARG DEBIAN_FRONTEND=noninteractive
 RUN sed -i "s/# deb-src/deb-src/g" /etc/apt/sources.list \
- && apt-get -y update \
- && apt-get -yy upgrade
+ && apt-get -yq update \
+ && apt-get -yq upgrade
  
-ENV BUILD_DEPS="git autoconf libtool pkg-config gcc g++ make  libssl-dev libpam0g-dev \
+ENV BUILD_DEPS="git autoconf libtool pkg-config bash-completion gcc g++ make  libssl-dev libpam0g-dev \
     libjpeg-dev libx11-dev libxfixes-dev libxrandr-dev  flex bison libxml2-dev \
     intltool xsltproc xutils-dev python-libxml2 xutils libfuse-dev \
     libmp3lame-dev nasm libpixman-1-dev xserver-xorg-dev \
     build-essential dpkg-dev pulseaudio libpulse-dev"
-RUN apt-get -yy install sudo apt-utils software-properties-common $BUILD_DEPS
+RUN apt-get -yq install sudo apt-utils software-properties-common $BUILD_DEPS
     
 WORKDIR /tmp
 RUN git clone --recursive https://github.com/neutrinolabs/xrdp.git \
@@ -33,11 +33,11 @@ RUN mkdir -p /tmp/so \
 
 FROM ubuntu:bionic
 ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get -y update \
- && apt-get -yy install locales \
+RUN apt-get -yq update \
+ && apt-get -yq install locales \
  && localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.UTF8
-RUN apt-get -y install \
+RUN apt-get -yq install \
     ca-certificates \
     crudini \
     less \
@@ -46,11 +46,12 @@ RUN apt-get -y install \
     supervisor \
     uuid-runtime \
     wget \
+    curl \
     xauth \
     xrdp \
     xorgxrdp \
     xprintidle \
- && apt-get -y install --no-install-recommends \
+ && apt-get -yq install --no-install-recommends \
     openbox \
     slock \
     chromium-browser \
@@ -58,10 +59,10 @@ RUN apt-get -y install \
  && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
  && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-dev.list' \
  && rm microsoft.gpg \
- && apt-get -y install microsoft-edge-beta \
- && apt-get -y remove xscreensaver \
- && apt-get -y autoremove \
- && apt-get -y autoclean \
+ && apt-get -yq install microsoft-edge-beta \
+ && apt-get -yq remove xscreensaver \
+ && apt-get -yq autoremove \
+ && apt-get -yq autoclean \
  && rm -rf /var/cache/apt /var/lib/apt/lists \
  && mkdir -p /var/lib/xrdp-pulseaudio-installer
 COPY --from=builder /tmp/so/module-xrdp-source.so /var/lib/xrdp-pulseaudio-installer
