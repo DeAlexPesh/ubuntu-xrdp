@@ -7,7 +7,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <item label="Chrome">
-    <action name="Execute"><execute>chromium-browser</execute></action>
+    <action name="Execute"><execute>chromium-browser --no-sandbox</execute></action>
   </item>
   <!-- This requires the presence of the 'openbox-menu' package to work -->
   <menu id="/Debian" />
