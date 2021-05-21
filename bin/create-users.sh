@@ -1,10 +1,10 @@
 #!/bin/bash
 
-test -f /etc/users.list || exit 0
+[ -f /etc/users.list ] || exit 0
 
 while read -r id username hash groups; do
  # --- skip comments and blank lines
- if [[ -z "$id" && "$id" == [[:blank:]#]* ]]; then continue; fi
+ [[ -z "$id" || "$id" == [[:blank:]#]* ]] && continue
  
  # --- if user not exists
  if ! grep ^"$username" /etc/passwd >/dev/null; then
@@ -21,6 +21,9 @@ while read -r id username hash groups; do
  usermod -p "$hash" "$username"
  # --- add user in supplementary groups
  if [ "$groups" ]; then
-  usermod -aG "$groups" "$username"
+  readarray -d , -t strarr <<<"$groups"
+  for (( n=0; n < ${#strarr[*]}; n++ )); do
+   [ "$(getent group "${strarr[n]}")" ] && usermod -aG "${strarr[n]}" "$username"
+  done
  fi
 done < /etc/users.list
