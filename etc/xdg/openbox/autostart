@@ -9,20 +9,20 @@ xset -dpms
 # --- allow quitting the X server with CTRL-ATL-Backspace
 setxkbmap -option terminate:ctrl_alt_bksp
 setxkbmap -option startx:alt_x
+
+auto-logout &
+
 # --- start chromium in kiosk mode
 [ -f ~/.config/chromium/'Local 2State' ] && \
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Local State'
 [ -f ~/.config/chromium/Default/Preferences ] && \
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
-auto-logout &
-chromium-browser \
---no-sandbox \
---no-first-run \
---disable \
---disable-translate \
---disable-infobars \
---disable-suggestions-service \
---disable-save-password-bubble \
---disable-gpu \
---start-maximized \
---kiosk "https://olimpoks.ente-ltd.ru/"
+[ -f ~/.config/chromium/Default/Preferences ] && \
+chromium-browser --no-sandbox --disable-gpu --no-first-run --start-maximized \
+--incognito \
+"https://olimpoks.ente-ltd.ru/"
+
+# --- start edge in kiosk mode
+# microsoft-edge --no-sandbox --no-first-run \
+# --incognito \
+# --kiosk "https://olimpoks.ente-ltd.ru/" --edge-kiosk-type=public-browsing --kiosk-idle-timeout-minutes=$IDLETIME
