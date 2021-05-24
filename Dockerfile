@@ -51,6 +51,7 @@ RUN apt-get -yq install \
     xrdp \
     xorgxrdp \
     xprintidle \
+    xautolock \
  && apt-get -yq install --no-install-recommends \
     openbox \
     slock \
