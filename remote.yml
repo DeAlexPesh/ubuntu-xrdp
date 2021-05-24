@@ -12,7 +12,7 @@ services:
    - /app/remote/home/:/home/
    - /app/remote/users.list:/etc/users.list:ro
   environment:
-   IDLETIME: 0
+   IDLETIME: 1
   network_mode: bridge
   logging:
    driver: "json-file"
