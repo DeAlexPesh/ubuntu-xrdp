@@ -13,7 +13,7 @@ services:
    - /app/remote/users.list:/etc/users.list:ro
    - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
   environment:
-   IDLETIME: 1
+   IDLETIME: 60
   network_mode: bridge
   logging:
    driver: "json-file"
