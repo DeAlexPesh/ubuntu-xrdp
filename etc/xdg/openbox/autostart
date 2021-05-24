@@ -15,9 +15,7 @@ setxkbmap -option grp:switch,grp:alt_shift_toggle us,ru
 auto-logout &
 
 # --- start edge in kiosk mode
-# microsoft-edge --no-sandbox --no-first-run \
-# --incognito \
-# --kiosk "https://olimpoks.ente-ltd.ru/" --edge-kiosk-type=public-browsing --kiosk-idle-timeout-minutes=$IDLETIME
+# edge-run.sh
 
 # --- start chromium
 chrome-run.sh
