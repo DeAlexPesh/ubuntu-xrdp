@@ -7,6 +7,7 @@ git clone https://github.com/DeAlexPesh/ubuntu-xrdp.git && \
 sudo mv ~/ubuntu-xrdp/Dockerfile /app/images/remote/Dockerfile && \
 sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
+sudo mv ~/ubuntu-xrdp/chrome.json /app/remote/chrome.json && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
 rm -rf ~/ubuntu-xrdp && \
 sudo chmod -R 775 /app/images/remote/
@@ -36,6 +37,7 @@ services:
   volumes:
    - /app/remote/home/:/home/
    - /app/remote/users.list:/etc/users.list:ro
+   - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
   environment:
    IDLETIME: 1
   network_mode: bridge
