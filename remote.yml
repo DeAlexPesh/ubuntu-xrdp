@@ -11,6 +11,7 @@ services:
   volumes:
    - /app/remote/home/:/home/
    - /app/remote/users.list:/etc/users.list:ro
+   - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
   environment:
    IDLETIME: 1
   network_mode: bridge
