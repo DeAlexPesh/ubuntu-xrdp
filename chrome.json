@@ -1,3 +1,27 @@
 {
-  
+  "AutoFillEnabled": false,
+  "BackgroundModeEnabled": false,
+  "BookmarkBarEnabled": false,
+  "ClearSiteDataOnExit": true,
+  "CookiesBlockedForUrls": ["*"],
+  "DeveloperToolsDisabled": true,
+  "Disable3DAPIs": true,
+  "DisablePluginFinder": true,
+  "DisablePrintPreview": true,
+  "DisabledSchemes": ["file", "mailto"],
+  "EditBookmarksEnabled": false,
+  "ExtensionInstallBlacklist": ["*"],
+  "HomepageLocation": "https://olimpoks.ente-ltd.ru",
+  "PasswordManagerAllowShowPasswords": false,
+  "PasswordManagerEnabled": false,
+  "PopupsAllowedForUrls": ["https://olimpoks.ente-ltd.ru"],
+  "PrintingEnabled": false,
+  "RestoreOnStartupURLs": ["https://olimpoks.ente-ltd.ru"],
+  "SafeBrowsingEnabled": true,
+  "SavingBrowserHistoryDisabled": false,
+  "SearchSuggestEnabled": false,
+  "ShowHomeButton": false,
+  "SyncDisabled": true,
+  "TranslateEnabled": false,
+  "URLWhitelist": ["https://olimpoks.ente-ltd.ru"]
 }
