@@ -83,6 +83,8 @@ RUN mkdir /var/run/dbus \
  && cp /etc/X11/xrdp/xorg.conf /etc/X11 \
  && sed -i "s/console/anybody/g" /etc/X11/Xwrapper.config \
  && sed -i "s/xrdp\/xorg/xorg/g" /etc/xrdp/sesman.ini \
+ && sed -i "s|MaxSessions=.*|MaxSessions=10|" /etc/xrdp/sesman.ini \
+ && sed -i "s|DisconnectedTimeLimit=.*|DisconnectedTimeLimit=$IDLETIME|" /etc/xrdp/sesman.ini \ 
  && rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem \
  && locale-gen ru_RU.UTF-8 \
  && echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession \
