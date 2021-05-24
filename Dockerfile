@@ -55,13 +55,19 @@ RUN apt-get -yq install \
  && apt-get -yq install --no-install-recommends \
     openbox \
     slock \
-    chromium-browser \
-# && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
-# && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
-# && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-beta.list' \
-# && rm microsoft.gpg \
-# && apt-get -yq update \
-# && apt-get -yq install microsoft-edge-beta \
+# CHROMIUM
+#   chromium-browser \
+# MICROSOFT EDGE
+ && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
+ && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
+ && sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge-beta.list' \
+ && rm microsoft.gpg \
+ && apt-get -yq update \
+ && apt-get -yq install microsoft-edge-beta \
+# WIN FONT
+# && echo "ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true" | debconf-set-selections \
+# && apt-get install -y --no-install-recommends fontconfig ttf-mscorefonts-installer \
+# && fc-cache -f -v \
  && apt-get -yq remove xscreensaver \
  && apt-get -yq autoremove \
  && apt-get -yq autoclean \
