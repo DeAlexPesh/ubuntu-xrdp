@@ -11,6 +11,8 @@ setxkbmap -option terminate:ctrl_alt_bksp
 setxkbmap -option startx:alt_x
 # --- keyboard layout change ALT-SHIFT
 setxkbmap -option grp:switch,grp:alt_shift_toggle us,ru
+# --- only left mouse button
+xmodmap -e "pointer = 1 0 0"
 
 auto-logout &
 
