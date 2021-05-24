@@ -52,6 +52,7 @@ RUN apt-get -yq install \
     xorgxrdp \
     xprintidle \
     xautolock \
+    xmlstarlet \
  && apt-get -yq install --no-install-recommends \
     openbox \
     slock \
@@ -85,6 +86,12 @@ RUN mkdir /var/run/dbus \
  && rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem \
  && locale-gen ru_RU.UTF-8 \
  && echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession \
+ && xmlstarlet ed -L -u "/_:openbox_config/_:theme/_:keepBorder" -v "no" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -u "/_:openbox_config/_:desktops/_:number" -v "1" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -s "/_:openbox_config/_:applications" -t elem -n application -v "" \
+                     -i //application -t attr -n name -v "chromium-browser" \
+                     -s //application -t elem -n decor -v "no" \
+                     -s //application -t elem -n fullscreen -v "yes" /etc/xdg/openbox/rc.xml \
  && echo "openbox-session" > /etc/skel/.Xsession
  
 VOLUME ["/home"]
