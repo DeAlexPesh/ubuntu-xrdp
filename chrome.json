@@ -3,7 +3,6 @@
   "BackgroundModeEnabled": false,
   "BookmarkBarEnabled": false,
   "ClearSiteDataOnExit": true,
-  "CookiesBlockedForUrls": ["*"],
   "DeveloperToolsDisabled": true,
   "Disable3DAPIs": true,
   "DisablePluginFinder": true,
