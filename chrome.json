@@ -26,6 +26,10 @@
   "EnableMediaRouter":false,
   "ExtensionInstallBlocklist":["*"],
   "FullscreenAllowed":false,
+  "ForcedLanguages":[
+    "ru-RU",
+    "en-US"
+  ],
   "HomepageIsNewTabPage":true,
   "HomepageLocation":"https://olimpoks.ente-ltd.ru",
   "HideWebStoreIcon":true,
