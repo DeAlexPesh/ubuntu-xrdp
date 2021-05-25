@@ -62,7 +62,8 @@
   "TranslateEnabled":false,
   "UserFeedbackAllowed":false,
   "URLWhitelist":[
-    "https://olimpoks.ente-ltd.ru"
+    "https://olimpoks.ente-ltd.ru",
+    "chrome://management"
   ],
   "URLBlacklist":["*"]
 }
