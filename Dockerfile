@@ -58,6 +58,7 @@ RUN apt-get -yq install \
     slock \
 # CHROMIUM
     chromium-browser \
+    chromium-browser-l10n \
 # MICROSOFT EDGE
 # && curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg \
 # && install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/ \
