@@ -5,7 +5,59 @@
   "AutofillAddressEnabled":false,
   "BackgroundModeEnabled":false,
   "BookmarkBarEnabled":false,
+  "EditBookmarksEnabled":false,
   "BrowserSignin":0,
+  "DefaultBrowserSettingEnabled":true,
+  "DisableScreenshots":true,
+  "DownloadRestrictions":3,
+  "DeveloperToolsAvailability":2,
+  "Disable3DAPIs":true,
+  "EnableMediaRouter":false,
+  "FullscreenAllowed":false,
+  "MediaRecommendationsEnabled":false,
+  "MetricsReportingEnabled":false,
+  "NTPCardsVisible":false,
+  "NTPCustomBackgroundEnabled":false,
+  "NetworkPredictionOptions":2,
+  "PasswordLeakDetectionEnabled":false,
+  "PasswordManagerEnabled":false,
+  "PaymentMethodQueryEnabled":false,
+  "PrintingEnabled":false,
+  "DisablePrintPreview":true,
+  "SafeBrowsingProtectionLevel":1,
+  "SearchSuggestEnabled":false,
+  "SpellCheckServiceEnabled":false,
+  "ShowCastIconInToolbar":false,
+  "SyncDisabled":true,
+  "TranslateEnabled":false,
+  "UserFeedbackAllowed":false,
+  "HideWebStoreIcon":true,
+  "IncognitoModeAvailability":2,
+  "SavingBrowserHistoryDisabled":true,
+  "ShowHomeButton":false,
+  "HomepageIsNewTabPage":true,
+  "HomepageLocation":"https://olimpoks.ente-ltd.ru",
+  "NewTabPageLocation":"https://olimpoks.ente-ltd.ru",
+  "SitePerProcess":true,
+  "ForcedLanguages":[
+    "ru-RU",
+    "en-US"
+  ],
+  "RestoreOnStartup":4,
+  "RestoreOnStartupURLs":[
+    "https://olimpoks.ente-ltd.ru"
+  ],
+  "PopupsBlockedForUrls":["*"],
+  "PopupsAllowedForUrls":[
+    "https://olimpoks.ente-ltd.ru"
+  ],
+  "URLBlacklist":["*"],
+  "URLWhitelist":[
+    "https://olimpoks.ente-ltd.ru"
+  ],
+  "ExtensionInstallBlocklist":["*"],
+  "ExtensionInstallAllowlist":[""],
+  "ExtensionInstallForcelist":[""],
   "ClearBrowsingDataOnExitList":[
     "browsing_history",
     "download_history",
@@ -15,55 +67,5 @@
     "autofill",
     "site_settings",
     "hosted_app_data"
-  ],
-  "DefaultBrowserSettingEnabled":false,
-  "DisableScreenshots":true,
-  "DownloadRestrictions":3,
-  "DeveloperToolsAvailability":2,
-  "Disable3DAPIs":true,
-  "DisablePrintPreview":true,
-  "EditBookmarksEnabled":false,
-  "EnableMediaRouter":false,
-  "ExtensionInstallBlocklist":["*"],
-  "FullscreenAllowed":false,
-  "ForcedLanguages":[
-    "ru-RU",
-    "en-US"
-  ],
-  "HomepageIsNewTabPage":true,
-  "HomepageLocation":"https://olimpoks.ente-ltd.ru",
-  "HideWebStoreIcon":true,
-  "IncognitoModeAvailability":2,
-  "MediaRecommendationsEnabled":false,
-  "MetricsReportingEnabled":false,
-  "NTPCardsVisible":false,
-  "NTPCustomBackgroundEnabled":false,
-  "NetworkPredictionOptions":2,
-  "NewTabPageLocation":"https://olimpoks.ente-ltd.ru",
-  "PasswordLeakDetectionEnabled":false,
-  "PasswordManagerEnabled":false,
-  "PaymentMethodQueryEnabled":false,
-  "PopupsAllowedForUrls":[
-    "https://olimpoks.ente-ltd.ru"
-  ],
-  "PrintingEnabled":false,
-  "RestoreOnStartup":4,
-  "RestoreOnStartupURLs":[
-    "https://olimpoks.ente-ltd.ru"
-  ],
-  "SafeBrowsingProtectionLevel":1,
-  "SavingBrowserHistoryDisabled":false,
-  "SearchSuggestEnabled":false,
-  "SitePerProcess":false,
-  "SpellCheckServiceEnabled":false,
-  "ShowHomeButton":false,
-  "ShowCastIconInToolbar":false,
-  "SyncDisabled":true,
-  "TranslateEnabled":false,
-  "UserFeedbackAllowed":false,
-  "URLWhitelist":[
-    "https://olimpoks.ente-ltd.ru",
-    "chrome://management"
-  ],
-  "URLBlacklist":["*"]
+  ]
 }
