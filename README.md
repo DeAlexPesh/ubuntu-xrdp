@@ -40,6 +40,7 @@ services:
    - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
   environment:
    IDLETIME: 60
+   KIOSKURL: 'https://olimpoks.ente-ltd.ru'
   network_mode: bridge
   logging:
    driver: "json-file"
