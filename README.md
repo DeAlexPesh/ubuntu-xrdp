@@ -9,6 +9,7 @@ sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
 sudo mv ~/ubuntu-xrdp/chrome.json /app/remote/chrome.json && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
+sudo mv ~/ubuntu-xrdp/extensions /app/remote/extensions && \
 rm -rf ~/ubuntu-xrdp && \
 sudo chmod -R 775 /app/images/remote/
 </code></pre>
@@ -38,6 +39,7 @@ services:
    - /app/remote/home/:/home/
    - /app/remote/users.list:/etc/users.list:ro
    - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
+   - /app/remote/extensions/:/extensions/:ro
   environment:
    IDLETIME: 60
    KIOSKURL: KIOSKURLREBIND
