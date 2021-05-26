@@ -7,5 +7,5 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Loc
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
 
 chromium-browser --no-sandbox --disable-gpu --no-first-run \
---kiosk --test-type \
+--test-type --load-extension="/extensions/navi" \
 "$KIOSKURL"
