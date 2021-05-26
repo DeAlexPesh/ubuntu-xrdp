@@ -7,8 +7,8 @@ xset s noblank
 # --- disable power management
 xset -dpms
 # --- allow quitting the X server with CTRL-ATL-Backspace
-setxkbmap -option terminate:ctrl_alt_bksp
-setxkbmap -option startx:alt_x
+# setxkbmap -option terminate:ctrl_alt_bksp
+# setxkbmap -option startx:alt_x
 # --- keyboard layout change ALT-SHIFT
 setxkbmap -option grp:switch,grp:alt_shift_toggle us,ru
 # --- only left mouse button
