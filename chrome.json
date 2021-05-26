@@ -32,7 +32,7 @@
   "TranslateEnabled":false,
   "UserFeedbackAllowed":false,
   "HideWebStoreIcon":true,
-  "IncognitoModeAvailability":2,
+  "IncognitoModeAvailability":1,
   "SavingBrowserHistoryDisabled":true,
   "ShowHomeButton":false,
   "HomepageIsNewTabPage":true,
