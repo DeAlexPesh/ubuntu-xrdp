@@ -74,7 +74,8 @@ RUN apt-get -yq install \
  && apt-get -yq autoremove \
  && apt-get -yq autoclean \
  && rm -rf /var/cache/apt /var/lib/apt/lists \
- && mkdir -p /var/lib/xrdp-pulseaudio-installer
+ && mkdir -p /var/lib/xrdp-pulseaudio-installer \
+ && mkdir -p /extensions
 COPY --from=builder /tmp/so/module-xrdp-source.so /var/lib/xrdp-pulseaudio-installer
 COPY --from=builder /tmp/so/module-xrdp-sink.so /var/lib/xrdp-pulseaudio-installer
 ADD bin /usr/bin
