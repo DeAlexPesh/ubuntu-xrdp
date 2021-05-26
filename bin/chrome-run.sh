@@ -6,6 +6,6 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/' ~/.config/chromium/'Loc
 [ -f ~/.config/chromium/Default/Preferences ] && \
 sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/"exit_type":"Normal"/' ~/.config/chromium/Default/Preferences
 
-chromium-browser --no-sandbox --disable-gpu --no-first-run --start-maximized \
---kiosk --test-type --enable-easy-off-store-extension-install \
+chromium-browser --no-sandbox --disable-gpu --no-first-run \
+--kiosk --test-type \
 "$KIOSKURL"
