@@ -40,7 +40,7 @@ services:
    - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
   environment:
    IDLETIME: 60
-   KIOSKURL: KIOSKURL
+   KIOSKURL: KIOSKURLREBIND
   network_mode: bridge
   logging:
    driver: "json-file"
@@ -49,6 +49,11 @@ services:
     max-file: "5"
   restart: always
 EOT' && \
+docker-compose -f /app/compose/remote.yml config
+</code></pre>
+
+<pre><code>sudo sed -i "s|KIOSKURLREBIND|\"https://olimpoks.ente-ltd.ru\"|" /app/remote/chrome.json && \
+sudo sed -i "s|KIOSKURLREBIND|\"https://olimpoks.ente-ltd.ru\"|" /app/compose/remote.yml && \
 docker-compose -f /app/compose/remote.yml config
 </code></pre>
 
