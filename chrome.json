@@ -55,6 +55,9 @@
   "URLWhitelist":[
     KIOSKURLREBIND
   ],
+  "ExtensionInstallSources":[
+    "file:///extensions/*"
+  ],
   "ExtensionInstallBlocklist":["*"],
   "ExtensionInstallAllowlist":[""],
   "ExtensionInstallForcelist":[""],
