@@ -97,7 +97,7 @@ RUN mkdir /var/run/dbus \
                      -s //application -t elem -n fullscreen -v "yes" /etc/xdg/openbox/rc.xml \
  && echo "openbox-session" > /etc/skel/.Xsession
 
-ENV KIOSKURL="https://ya.ru"
+ENV KIOSKURL="localhost"
 VOLUME ["/home"]
 EXPOSE 3389 9001
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
