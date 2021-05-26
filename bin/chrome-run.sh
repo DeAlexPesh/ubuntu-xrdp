@@ -8,4 +8,4 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/
 
 chromium-browser --no-sandbox --disable-gpu --no-first-run \
 --test-type --load-extension="/extensions/navi" \
---app="$KIOSKURL"
+--kiosk --app="$KIOSKURL"
