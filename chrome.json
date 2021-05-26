@@ -10,7 +10,7 @@
   "DefaultBrowserSettingEnabled":true,
   "DisableScreenshots":true,
   "DownloadRestrictions":3,
-  "DeveloperToolsAvailability":2,
+  "DeveloperToolsAvailability":1,
   "Disable3DAPIs":true,
   "EnableMediaRouter":false,
   "FullscreenAllowed":false,
