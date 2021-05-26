@@ -1,0 +1,20 @@
+{
+ "name": "Navi",
+ "description": "Navigation menu",
+ "version": "1.0",
+ "manifest_version": 3,
+ "permissions": [
+  "storage"
+ ],
+ "background": {
+  "service_worker": "background.js"
+ },
+ "content_scripts": [{
+  "matches": ["<all_urls>"],
+  "js": ["script.js"]
+ }],
+ "web_accessible_resources": [{
+  "resources": ["navi.js"],
+  "matches": ["<all_urls>"]
+ }]
+}
