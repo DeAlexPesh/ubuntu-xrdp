@@ -8,4 +8,4 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/
 
 chromium-browser --no-sandbox --disable-gpu --no-first-run --start-maximized \
 --incognito --test-type \
-$KIOSKURL
+"$KIOSKURL"
