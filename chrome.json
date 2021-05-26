@@ -59,8 +59,12 @@
     "file:///extensions/*"
   ],
   "ExtensionInstallBlocklist":["*"],
-  "ExtensionInstallAllowlist":[""],
-  "ExtensionInstallForcelist":[""],
+  "ExtensionInstallAllowlist":[
+    "lfjbmacjckgmbnocfkdkamicgoinikgj"
+  ],
+  "ExtensionInstallForcelist":[
+    "lfjbmacjckgmbnocfkdkamicgoinikgj:file:///extensions/"
+  ],
   "ClearBrowsingDataOnExitList":[
     "browsing_history",
     "download_history",
