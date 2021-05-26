@@ -10,10 +10,10 @@
   "DefaultBrowserSettingEnabled":true,
   "DisableScreenshots":true,
   "DownloadRestrictions":3,
-  "DeveloperToolsAvailability":1,
+  "DeveloperToolsAvailability":2,
   "Disable3DAPIs":true,
   "EnableMediaRouter":false,
-  "FullscreenAllowed":false,
+  "FullscreenAllowed":true,
   "MediaRecommendationsEnabled":false,
   "MetricsReportingEnabled":false,
   "NTPCardsVisible":false,
@@ -56,16 +56,10 @@
     KIOSKURLREBIND,
     "chrome://*"
   ],
-  "ExtensionInstallSources":[
-    "file:///extensions/*"
-  ],
-  "ExtensionInstallBlocklist":["*"],
-  "ExtensionInstallAllowlist":[
-    "lfjbmacjckgmbnocfkdkamicgoinikgj"
-  ],
-  "ExtensionInstallForcelist":[
-    "lfjbmacjckgmbnocfkdkamicgoinikgj"
-  ],
+  "ExtensionInstallSources":[],
+  "ExtensionInstallBlocklist":[],
+  "ExtensionInstallAllowlist":[],
+  "ExtensionInstallForcelist":[],
   "ClearBrowsingDataOnExitList":[
     "browsing_history",
     "download_history",
