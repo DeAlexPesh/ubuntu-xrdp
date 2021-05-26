@@ -16,8 +16,5 @@ xmodmap -e "pointer = 1 0 0"
 
 auto-logout &
 
-# --- start edge in kiosk mode
-# edge-run.sh
-
 # --- start chromium
 chrome-run.sh
