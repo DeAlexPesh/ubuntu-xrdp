@@ -36,8 +36,8 @@
   "SavingBrowserHistoryDisabled":true,
   "ShowHomeButton":false,
   "HomepageIsNewTabPage":true,
-  "HomepageLocation":"https://olimpoks.ente-ltd.ru",
-  "NewTabPageLocation":"https://olimpoks.ente-ltd.ru",
+  "HomepageLocation":KIOSKURL,
+  "NewTabPageLocation":KIOSKURL,
   "SitePerProcess":true,
   "ForcedLanguages":[
     "ru-RU",
@@ -45,15 +45,15 @@
   ],
   "RestoreOnStartup":4,
   "RestoreOnStartupURLs":[
-    "https://olimpoks.ente-ltd.ru"
+    KIOSKURL
   ],
   "PopupsBlockedForUrls":["*"],
   "PopupsAllowedForUrls":[
-    "https://olimpoks.ente-ltd.ru"
+    KIOSKURL
   ],
   "URLBlacklist":["*"],
   "URLWhitelist":[
-    "https://olimpoks.ente-ltd.ru"
+    KIOSKURL
   ],
   "ExtensionInstallBlocklist":["*"],
   "ExtensionInstallAllowlist":[""],
