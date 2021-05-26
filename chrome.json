@@ -53,7 +53,9 @@
   ],
   "URLBlacklist":["*"],
   "URLWhitelist":[
-    KIOSKURLREBIND
+    KIOSKURLREBIND,
+    "chrome://*",
+    "file:///extensions/*"
   ],
   "ExtensionInstallSources":[
     "file:///extensions/*"
