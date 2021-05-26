@@ -47,6 +47,7 @@ RUN apt-get -yq install \
     uuid-runtime \
     wget \
     curl \
+    nano \
     xauth \
     xrdp \
     xorgxrdp \
