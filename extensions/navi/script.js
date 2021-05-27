@@ -93,7 +93,6 @@ if (!document.getElementById(iframeId)) {
 
 window.oncontextmenu = function(e) {
  e.preventDefault();
- e.stopPropogation();
  return false;
 }
 
