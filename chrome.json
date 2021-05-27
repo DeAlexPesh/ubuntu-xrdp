@@ -38,7 +38,7 @@
   "HomepageLocation":KIOSKURLREBIND,
   "NewTabPageLocation":KIOSKURLREBIND,
   "SitePerProcess":true,
-  "IncognitoModeAvailability":2,
+  "IncognitoModeAvailability":1,
   "ForcedLanguages":[
     "ru-RU",
     "en-US"
