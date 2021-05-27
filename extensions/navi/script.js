@@ -12,15 +12,18 @@ var currentTop = htmlStyles.getPropertyValue('top');
 currentTop = ( currentTop === '0px' ) ? 0 : parseFloat(currentTop);
 html.style.top = currentTop + height + 'px';
 
-var elFixed = document.body.getElementsByTagName("*");
-Array.apply(null, elFixed).map(function(el) {
- var elStyles = window.getComputedStyle(el);
- if (elStyles.getPropertyValue('position') == 'fixed') {
-  currentTop = elStyles.getPropertyValue('top');
-  currentTop = ( currentTop === '0px' ) ? 0 : parseFloat(currentTop);
-  el.style.top = currentTop + height + 'px';;
- }
-});
+var upTop = function() {
+ var elFixed = document.body.getElementsByTagName("*");
+ Array.apply(null, elFixed).map(function(el) {
+  var elStyles = window.getComputedStyle(el);
+  if (elStyles.getPropertyValue('position') == 'fixed') {
+   var cTop = elStyles.getPropertyValue('top');
+   cTop = ( cTop === '0px' ) ? 0 : parseFloat(cTop);
+   el.style.top = cTop + height + 'px';;
+  }
+ });
+}
+window.addEventListener("scroll", function () { upTop(); }, false);
 
 var iframeId = chrome.runtime.id;
 
