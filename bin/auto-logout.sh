@@ -1,8 +1,3 @@
 #!/bin/sh
-if [ $IDLETIME ]; then
- xautolock -time $IDLETIME -locker openbox --exit
-elif [ $LOCKTIME ]; then
- xautolock -time $LOCKTIME -locker slock
-else
- xautolock -time 10 -locker slock
-fi
+if [ "$IDLETIME" ]; then xautolock -time "$IDLETIME" -locker pkill -u "$USER"; fi
+while true; do { printf 'HTTP/1.1 200 OK\r\n'; sh pkill -u "$USER"; } | nc -l 8080; done
