@@ -41,7 +41,7 @@ services:
    - /app/remote/chrome.json:/etc/chromium-browser/policies/managed/chrome.json:ro
    - /app/remote/extensions/:/extensions/:ro
   environment:
-   IDLETIME: 60
+   IDLETIME: 0
    KIOSKURL: KIOSKURLREBIND
   network_mode: bridge
   logging:
