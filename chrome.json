@@ -32,13 +32,13 @@
   "TranslateEnabled":false,
   "UserFeedbackAllowed":false,
   "HideWebStoreIcon":true,
-  "IncognitoModeAvailability":1,
   "SavingBrowserHistoryDisabled":true,
   "ShowHomeButton":false,
   "HomepageIsNewTabPage":true,
   "HomepageLocation":KIOSKURLREBIND,
   "NewTabPageLocation":KIOSKURLREBIND,
   "SitePerProcess":true,
+  "IncognitoModeAvailability":2,
   "ForcedLanguages":[
     "ru-RU",
     "en-US"
