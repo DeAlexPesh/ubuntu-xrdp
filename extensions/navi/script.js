@@ -61,7 +61,7 @@ if (!document.getElementById(iframeId)) {
  navUrl.innerHTML = localUrls[localUrlsId];
  var navUrlIcon = iframeDoc.createElement('span');
  navUrlIcon.className = "nav-url-icon";
- navUrlIcon.setAttribute('title', 'Прейти на главную страницу');
+ navUrlIcon.setAttribute('title', 'Перейти на главную страницу');
  navUrlIcon.onclick = function() { window.location.assign(localUrls[localUrlsId]); };
  navUrl.insertBefore(navUrlIcon, navUrl.firstChild);
  navList.appendChild(navUrl);
@@ -98,7 +98,9 @@ window.oncontextmenu = function(e) {
 }
 
 var logout = function() {
- chrome.processes.terminate(0);
+ chrome.runtime.sendMessage({greeting: "close"}, function(response) {
+  console.log(response.farewell);
+ });
 }
 
 var s = document.createElement('script');
