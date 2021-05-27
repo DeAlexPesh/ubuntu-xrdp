@@ -15,4 +15,4 @@ chromium-browser --no-sandbox --disable-gpu --no-first-run --test-type \
 
 wait $pid
 
-if ! pgrep -f chromium-browser > /dev/null; then pkill -u "$USER"; fi
+if ! pgrep -u "$USER" -f chromium-browser > /dev/null; then pkill -u "$USER"; fi
