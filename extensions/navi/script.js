@@ -1,4 +1,4 @@
-var localUrls = ['https://olimpoks.ente-ltd.ru'];
+var localUrls = [KIOSKURLREBIND];
 var localUrlsId = 0;
 
 var height = 45;
