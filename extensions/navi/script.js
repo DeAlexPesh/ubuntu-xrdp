@@ -69,7 +69,6 @@ if (!document.getElementById(iframeId)) {
  var navExit = iframeDoc.createElement('li');
  navExit.className = "nav-exit btn";
  navExit.setAttribute('title', 'Завершить сеанс');
- navExit.setAttribute('display', 'none');
  navExit.onclick = function() { logout(); };
  navList.appendChild(navExit);
 
@@ -99,7 +98,7 @@ window.oncontextmenu = function(e) {
 }
 
 var logout = function() {
- // ?
+ chrome.processes.terminate(0);
 }
 
 var s = document.createElement('script');
