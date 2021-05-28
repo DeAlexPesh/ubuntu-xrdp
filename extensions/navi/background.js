@@ -66,5 +66,5 @@ function GetPageName(error) {
  if (ErrText.indexOf("net::ERR_INTERNET_DISCONNECTED") >= 0)
   return "Error-Internet-Disconnected.html";
  */
- return "Error.html";
+ return "msg.html";
 }
