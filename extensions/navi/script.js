@@ -17,9 +17,8 @@ var upTop = function() {
  Array.apply(null, elFixed).map(function(el) {
   var elStyles = window.getComputedStyle(el);
   if (elStyles.getPropertyValue('position') == 'fixed') {
-   var cTop = elStyles.getPropertyValue('top');
-   cTop = ( cTop === '0px' ) ? 0 : parseFloat(cTop);
-   el.style.top = cTop + height + 'px';;
+   var cTop = parseFloat(elStyles.getPropertyValue('top'));
+   if (cTop < height) el.style.top = cTop + height + 'px';
   }
  });
 }
