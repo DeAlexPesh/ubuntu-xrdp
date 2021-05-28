@@ -5,9 +5,9 @@ if [[ $# -eq 0 ]]; then
  exit 0
 fi
 
-cat '' > "$2"
+echo '' > "$2"
 
 for (( I=1; I<="$1"; I++ )); do  
- NMUSER=$(printf "link%02d" I)
- cat "$((1000+I)) $NMUSER $(openssl passwd -1 "$NMUSER") sudo" >> "$2"
+ NMUSER=$(printf "link%02d" $I)
+ echo "$((1000+I)) $NMUSER $(openssl passwd -1 "$NMUSER") sudo" >> "$2"
 done
