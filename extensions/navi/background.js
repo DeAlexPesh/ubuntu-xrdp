@@ -9,3 +9,13 @@ chrome.runtime.onMessage.addListener(
   }
  }
 );
+
+chrome.webRequest.onHeadersReceived.addListener(info => {
+ chrome.tabs.executeScript(info.tabId, {
+  file: 'stop.js',
+  runAt: 'document_start',
+ });
+}, {
+ urls: ['*://foo/*'],
+ types: ['main_frame'],
+});
