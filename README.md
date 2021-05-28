@@ -25,7 +25,7 @@ sudo chmod -R 775 /app/images/remote/
 N linkN</i>
 </pre>
 
-<pre><code>sudo chmod +x /app/remote/user-list-gen.sh
+<pre><code>sudo chmod +x /app/remote/user-list-gen.sh && \
 /app/remote/user-list-gen.sh 10 /app/remote/users.list
 </code></pre>
 
