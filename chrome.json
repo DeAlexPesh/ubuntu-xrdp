@@ -53,7 +53,10 @@
   ],
   "URLBlacklist":["*"],
   "URLWhitelist":[
-    KIOSKURLREBIND
+    KIOSKURLREBIND,
+    "chrome://settings",
+    "chrome://os-settings",
+    "chrome-untrusted://"
   ],
   "ExtensionInstallSources":[],
   "ExtensionInstallBlocklist":[],
