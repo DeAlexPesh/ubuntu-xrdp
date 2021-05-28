@@ -27,6 +27,8 @@ N linkN</i>
 
 <pre><code>sudo chmod +x /app/remote/user-list-gen.sh && \
 /app/remote/user-list-gen.sh 10 /app/remote/users.list
+
+<i>Usage: user-list-gen.sh X Y  ( X is need users quantity, Y is users.list file... )</i>
 </code></pre>
 
 <pre><code>sudo bash -c 'cat &lt;&lt;EOT > /app/compose/remote.yml
