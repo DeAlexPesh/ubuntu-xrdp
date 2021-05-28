@@ -91,6 +91,20 @@ RUN mkdir /var/run/dbus \
  && sed -i "s|DisconnectedTimeLimit=.*|DisconnectedTimeLimit=$IDLETIME|" /etc/xrdp/sesman.ini \ 
  && rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem \
  && locale-gen ru_RU.UTF-8 \
+ && bash -c 'cat <<EOT >> /etc/xrdp/xrdp_keyboard.ini
+
+[layouts_map_ru]
+rdp_layout_us=ru,us
+rdp_layout_ru=ru,us
+
+[rdp_keyboard_ru]
+keyboard_type=4
+keyboard_type=7
+keyboard_subtype=1
+options=grp:alt_shift_toggle
+rdp_layouts=default_rdp_layouts
+layouts_map=layouts_map_ru
+EOT' \
  && echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession \
  && xmlstarlet ed -L -u "/_:openbox_config/_:theme/_:keepBorder" -v "no" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -u "/_:openbox_config/_:desktops/_:number" -v "1" /etc/xdg/openbox/rc.xml \
