@@ -55,8 +55,9 @@
   "URLWhitelist":[
     KIOSKURLREBIND,
     "chrome://settings",
-    "chrome://os-settings",
-    "chrome-untrusted://"
+    "chrome://*",
+    "chrome-untrusted://*",
+    "chrome-extensions://*"
   ],
   "ExtensionInstallSources":[],
   "ExtensionInstallBlocklist":[],
