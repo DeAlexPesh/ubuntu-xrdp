@@ -9,6 +9,7 @@ sudo mv ~/ubuntu-xrdp/bin /app/images/remote/bin && \
 sudo mv ~/ubuntu-xrdp/etc /app/images/remote/etc && \
 sudo mv ~/ubuntu-xrdp/chrome.json /app/remote/chrome.json && \
 sudo mv ~/ubuntu-xrdp/users.list /app/remote/users.list && \
+sudo mv ~/ubuntu-xrdp/user-list-gen.sh /app/remote/user-list-gen.sh && \
 sudo mv ~/ubuntu-xrdp/extensions /app/remote/extensions && \
 rm -rf ~/ubuntu-xrdp && \
 sudo chmod -R 775 /app/images/remote/
@@ -23,6 +24,10 @@ sudo chmod -R 775 /app/images/remote/
 <i>...
 N linkN</i>
 </pre>
+
+<pre><code>/app/remote/user-list-gen.sh 10 /app/remote/users.list
+
+</code></pre>
 
 <pre><code>sudo bash -c 'cat &lt;&lt;EOT > /app/compose/remote.yml
 version: "3.5"
