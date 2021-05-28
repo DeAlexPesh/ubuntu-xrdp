@@ -105,6 +105,13 @@ var logout = function() {
  });
 }
 
+// storage params
+chrome.storage.local.set({
+ blockWindows: true,
+ blockTabs: true
+});
+
+// inject js
 var s = document.createElement('script');
 s.src = chrome.runtime.getURL('navi.js');
 s.onload = function() {
