@@ -20,5 +20,11 @@
  "web_accessible_resources": [{
   "matches": ["<all_urls>"],
   "resources": ["navi.js"]
- }]
+ }],
+ "commands": {
+  "do-nothing-00": {
+   "suggested_key": { "default": "Ctrl+O" },
+   "description": "Do nothing 00"
+  }
+ }
 }
