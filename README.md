@@ -25,8 +25,8 @@ sudo chmod -R 775 /app/images/remote/
 N linkN</i>
 </pre>
 
-<pre><code>/app/remote/user-list-gen.sh 10 /app/remote/users.list
-
+<pre><code>sudo chmod +x /app/remote/user-list-gen.sh
+/app/remote/user-list-gen.sh 10 /app/remote/users.list
 </code></pre>
 
 <pre><code>sudo bash -c 'cat &lt;&lt;EOT > /app/compose/remote.yml
