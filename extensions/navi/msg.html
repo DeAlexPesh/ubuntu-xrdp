@@ -1,17 +1,34 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
 <head>
- <title>-</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>...</title>
+<style type="text/css">
+html,body,#wrapper {
+width: 100%;
+height: 100%;
+padding: 0;
+margin: 0;
+}
+#fail-bg {
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #eee !important;
+background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNDAiIGhlaWdodD0iMTAwIiBzaGFwZS1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgdGV4dC1yZW5kZXJpbmc9Imdlb21ldHJpY1ByZWNpc2lvbiIgaW1hZ2UtcmVuZGVyaW5nPSJvcHRpbWl6ZVF1YWxpdHkiIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiB2aWV3Qm94PSIwIDAgMTQwMCAxMDAwIj48ZyBmaWxsPSIjOTk5Ij48cGF0aCBkPSJNNzAwIDI1MGMxMzggMCAyNTAgMTEyIDI1MCAyNTBTODM4IDc1MCA3MDAgNzUwIDQ1MCA2MzggNDUwIDUwMHMxMTItMjUwIDI1MC0yNTB6bTAgNzFjOTkgMCAxNzkgODAgMTc5IDE3OXMtODAgMTc5LTE3OSAxNzktMTc5LTgwLTE3OS0xNzkgODAtMTc5IDE3OS0xNzl6Ii8+PHBhdGggZD0iTTgyNiA1NzZsLTc1LTc2IDc1LTc2LTUwLTUwLTc2IDc1LTc2LTc1LTUwIDUwIDc1IDc2LTc1IDc2IDUwIDUwIDc2LTc1IDc2IDc1eiIvPjwvZz48cGF0aCBmaWxsPSJub25lIiBkPSJNMCAwaDE0MDB2MTAwMEgweiIvPjwvc3ZnPg==') !important;
+background-position: 50% 50% !important;
+background-attachment: fixed !important;
+background-repeat: no-repeat !important;
+background-size: cover !important;
+cursor: pointer !important;
+}
+</style>
 </head>
 <body>
- <div id="main-frame-error">
-  <div id="box">
-   <div id="msg">-</div>
-   <div id="btn">
-    <span onclick="window.history.back();">Back</span>
-   </div>
-  </div>
- </div>
+<div id="wrapper">
+<span id="fail-bg" onclick="window.history.back()"></span>
+</div>
 </body>
 </html>
-
