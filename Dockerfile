@@ -88,23 +88,30 @@ RUN mkdir /var/run/dbus \
  && sed -i "s/console/anybody/g" /etc/X11/Xwrapper.config \
  && sed -i "s/xrdp\/xorg/xorg/g" /etc/xrdp/sesman.ini \
  && sed -i "s|MaxSessions=.*|MaxSessions=10|" /etc/xrdp/sesman.ini \
+ && sed -i "s|KillDisconnected=.*|KillDisconnected=true|" /etc/xrdp/sesman.ini \
  && sed -i "s|DisconnectedTimeLimit=.*|DisconnectedTimeLimit=$IDLETIME|" /etc/xrdp/sesman.ini \ 
+ && sed -i "s|ls_top_window_bg_color=.*|ls_top_window_bg_color=000000|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_width=.*|ls_width=350|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_height=.*|ls_height=160|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_bg_color=.*|ls_bg_color=dedede|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_logo_filename=.*|ls_logo_filename=\"/logo.bmp\"|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_logo_x_pos=.*|ls_logo_x_pos=-10|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_logo_y_pos=.*|ls_logo_y_pos=-10|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_label_x_pos=.*|ls_label_x_pos=30|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_label_width=.*|ls_label_width=60|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_input_x_pos=.*|ls_input_x_pos=110|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_input_width=.*|ls_input_width=210|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_input_y_pos=.*|ls_input_y_pos=30|" /etc/xrdp/xrdp.ini \ 
+ && sed -i "s|ls_btn_ok_x_pos=.*|ls_btn_ok_x_pos=142|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_ok_y_pos=.*|ls_btn_ok_y_pos=120|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_ok_width=.*|ls_btn_ok_width=85|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_ok_height=.*|ls_btn_ok_height=30|" /etc/xrdp/xrdp.ini \ 
+ && sed -i "s|ls_btn_cancel_x_pos=.*|ls_btn_ok_x_pos=237|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_y_pos=.*|ls_btn_ok_y_pos=120|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_width=.*|ls_btn_ok_width=85|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_height=.*|ls_btn_ok_height=30|" /etc/xrdp/xrdp.ini \ 
  && rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem \
  && locale-gen ru_RU.UTF-8 \
- && bash -c 'cat <<EOT >> /etc/xrdp/xrdp_keyboard.ini
-
-[layouts_map_ru]
-rdp_layout_us=ru,us
-rdp_layout_ru=ru,us
-
-[rdp_keyboard_ru]
-keyboard_type=4
-keyboard_type=7
-keyboard_subtype=1
-options=grp:alt_shift_toggle
-rdp_layouts=default_rdp_layouts
-layouts_map=layouts_map_ru
-EOT' \
  && echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession \
  && xmlstarlet ed -L -u "/_:openbox_config/_:theme/_:keepBorder" -v "no" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -u "/_:openbox_config/_:desktops/_:number" -v "1" /etc/xdg/openbox/rc.xml \
