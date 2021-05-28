@@ -37,6 +37,7 @@ RUN apt-get -yq update \
  && apt-get -yq install locales \
  && localedef -i ru_RU -c -f UTF-8 -A /usr/share/locale/locale.alias ru_RU.UTF-8
 ENV LANG ru_RU.UTF8
+ENV LC_ALL ru_RU.UTF-8
 RUN apt-get -yq install \
     ca-certificates \
     crudini \
@@ -99,16 +100,11 @@ RUN mkdir /var/run/dbus \
                      -s //application -t elem -n fullscreen -v "yes" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -d "/_:openbox_config/_:mouse" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -d "/_:openbox_config/_:keyboard/*" /etc/xdg/openbox/rc.xml \
- && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
-                     -i //keybind -t attr -n key -v "A-S-e" \
-                     -s //keybind -t elem -n action -v "" \
-                     -i //action -t attr -n name -v "Execute" \
-                     -s //action -t elem -n command -v "setxkbmap us" /etc/xdg/openbox/rc.xml \
- && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
-                     -i //keybind -t attr -n key -v "A-S-d" \
-                     -s //keybind -t elem -n action -v "" \
-                     -i //action -t attr -n name -v "Execute" \
-                     -s //action -t elem -n command -v "setxkbmap ru" /etc/xdg/openbox/rc.xml \
+# && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
+#                     -i //keybind -t attr -n key -v "A-S-<key>" \
+#                     -s //keybind -t elem -n action -v "" \
+#                     -i //action -t attr -n name -v "Execute" \
+#                     -s //action -t elem -n command -v "setxkbmap ru" /etc/xdg/openbox/rc.xml \
  && echo "openbox-session" > /etc/skel/.Xsession
 
 ENV KIOSKURL="localhost"
