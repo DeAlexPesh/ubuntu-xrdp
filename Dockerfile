@@ -106,10 +106,10 @@ RUN mkdir /var/run/dbus \
  && sed -i "s|ls_btn_ok_y_pos=.*|ls_btn_ok_y_pos=120|" /etc/xrdp/xrdp.ini \
  && sed -i "s|ls_btn_ok_width=.*|ls_btn_ok_width=85|" /etc/xrdp/xrdp.ini \
  && sed -i "s|ls_btn_ok_height=.*|ls_btn_ok_height=30|" /etc/xrdp/xrdp.ini \ 
- && sed -i "s|ls_btn_cancel_x_pos=.*|ls_btn_ok_x_pos=237|" /etc/xrdp/xrdp.ini \
- && sed -i "s|ls_btn_cancel_y_pos=.*|ls_btn_ok_y_pos=120|" /etc/xrdp/xrdp.ini \
- && sed -i "s|ls_btn_cancel_width=.*|ls_btn_ok_width=85|" /etc/xrdp/xrdp.ini \
- && sed -i "s|ls_btn_cancel_height=.*|ls_btn_ok_height=30|" /etc/xrdp/xrdp.ini \ 
+ && sed -i "s|ls_btn_cancel_x_pos=.*|ls_btn_cancel_x_pos=237|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_y_pos=.*|ls_btn_cancel_y_pos=120|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_width=.*|ls_btn_cancel_width=85|" /etc/xrdp/xrdp.ini \
+ && sed -i "s|ls_btn_cancel_height=.*|ls_btn_cancel_height=30|" /etc/xrdp/xrdp.ini \ 
  && rm -rf /etc/xrdp/rsakeys.ini /etc/xrdp/*.pem \
  && locale-gen ru_RU.UTF-8 \
  && echo "pulseaudio -D --enable-memfd=True" > /etc/skel/.Xsession \
