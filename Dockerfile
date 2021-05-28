@@ -98,7 +98,7 @@ RUN mkdir /var/run/dbus \
                      -i //application -t attr -n name -v "chromium-browser" \
                      -s //application -t elem -n decor -v "no" \
                      -s //application -t elem -n fullscreen -v "yes" /etc/xdg/openbox/rc.xml \
- && xmlstarlet ed -L -d "/_:openbox_config/_:mouse" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -d "/_:openbox_config/_:mouse/*" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -d "/_:openbox_config/_:keyboard/*" /etc/xdg/openbox/rc.xml \
 # && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
 #                     -i //keybind -t attr -n key -v "A-S-<key>" \
