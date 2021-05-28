@@ -47,6 +47,7 @@ chrome.webNavigation.onErrorOccurred.addListener((data) => {
 });
 
 function GetPageName(error) {
+ /*
  var ErrText = new String(error);
  if (ErrText.indexOf("net::ERR_BLOCKED_BY_ADMINISTRATOR") >= 0)
   return "Error-Blocked-by-Administrator.html";
@@ -64,5 +65,6 @@ function GetPageName(error) {
   return "Error-Connection-Refused.html";
  if (ErrText.indexOf("net::ERR_INTERNET_DISCONNECTED") >= 0)
   return "Error-Internet-Disconnected.html";
+ */
  return "Error.html";
 }
