@@ -8,8 +8,7 @@ var htmlStyles = window.getComputedStyle(html);
 if (htmlStyles.getPropertyValue('position') === 'static') {
  html.style.position = 'relative';
 }
-var currentTop = htmlStyles.getPropertyValue('top');
-currentTop = ( currentTop === '0px' ) ? 0 : parseFloat(currentTop);
+var currentTop = parseFloat(htmlStyles.getPropertyValue('top'));
 html.style.top = currentTop + height + 'px';
 
 var upTop = function() {
