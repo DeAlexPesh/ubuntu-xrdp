@@ -4,19 +4,24 @@
  "version": "1.0",
  "manifest_version": 3,
  "permissions": [
-  "storage",
-  "tabs"
+  "webNavigation",
+  "tabs",
+  "history",
+  "activeTab",
+	 "storage",
+	 "http://*/*",
+  "https://*/*"
  ],
  "background": {
+  "persistent": false,
   "service_worker": "background.js"
  },
  "content_scripts": [{
   "matches": ["<all_urls>"],
-  "all_frames": true,
   "js": ["script.js"]
  }],
  "web_accessible_resources": [{
-  "resources": ["navi.js"],
-  "matches": ["<all_urls>"]
+  "matches": ["<all_urls>"],
+  "resources": ["navi.js"]
  }]
 }
