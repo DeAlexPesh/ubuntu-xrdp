@@ -97,8 +97,18 @@ RUN mkdir /var/run/dbus \
                      -i //application -t attr -n name -v "chromium-browser" \
                      -s //application -t elem -n decor -v "no" \
                      -s //application -t elem -n fullscreen -v "yes" /etc/xdg/openbox/rc.xml \
- && xmlstarlet ed -L -d "/_:openbox_config/_:keyboard" /etc/xdg/openbox/rc.xml \
  && xmlstarlet ed -L -d "/_:openbox_config/_:mouse" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -d "/_:openbox_config/_:keyboard/*" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
+                     -i //keybind -t attr -n key -v "A-S-e" \
+                     -s //keybind -t elem -n action -v "" \
+                     -i //action -t attr -n name -v "Execute" \
+                     -s //action -t elem -n command -v "setxkbmap us" /etc/xdg/openbox/rc.xml \
+ && xmlstarlet ed -L -s "/_:openbox_config/_:keyboard" -t elem -n keybind -v "" \
+                     -i //keybind -t attr -n key -v "A-S-d" \
+                     -s //keybind -t elem -n action -v "" \
+                     -i //action -t attr -n name -v "Execute" \
+                     -s //action -t elem -n command -v "setxkbmap ru" /etc/xdg/openbox/rc.xml \
  && echo "openbox-session" > /etc/skel/.Xsession
 
 ENV KIOSKURL="localhost"
