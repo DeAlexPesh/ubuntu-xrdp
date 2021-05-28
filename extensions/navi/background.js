@@ -7,6 +7,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   }
 });
 
+// disable shortcuts
+chrome.commands.onCommand.addListener((a) => {});
+
 // deny new tabs
 chrome.tabs.onCreated.addListener((tab) => {
  chrome.tabs.query({ currentWindow: true }, (tabs) => {
