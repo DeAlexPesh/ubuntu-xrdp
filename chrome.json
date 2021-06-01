@@ -54,7 +54,6 @@
   "URLBlacklist":["*"],
   "URLWhitelist":[
     KIOSKURLREBIND,
-    "chrome://settings",
     "chrome://*",
     "chrome-untrusted://*",
     "chrome-extensions://*"
