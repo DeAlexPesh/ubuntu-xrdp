@@ -141,6 +141,20 @@ RUN mkdir /var/run/dbus \
 #                     -s //keybind -t elem -n action -v "" \
 #                     -i //action -t attr -n name -v "Execute" \
 #                     -s //action -t elem -n command -v "setxkbmap ru" /etc/xdg/openbox/rc.xml \
+ && bash -c 'cat <<EOT >> /etc/xrdp/xrdp_keyboard.ini
+
+[layouts_map_ru]
+rdp_layout_us=ru,us
+rdp_layout_ru=ru,us
+
+[rdp_keyboard_ru]
+keyboard_type=4
+keyboard_type=7
+keyboard_subtype=1
+options=grp:alt_shift_toggle
+rdp_layouts=default_rdp_layouts
+layouts_map=layouts_map_ru
+EOT' \
  && echo "openbox-session" > /etc/skel/.Xsession
 
 ENV KIOSKURL="localhost"
