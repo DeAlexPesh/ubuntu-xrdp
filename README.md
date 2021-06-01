@@ -60,7 +60,7 @@ EOT' && \
 docker-compose -f /app/compose/remote.yml config
 </code></pre>
 
-<pre><code>export KIOSKURLREBIND='\"https://olimpoks.ente-ltd.ru\"' && \
+<pre><code>export KIOSKURLREBIND='\"https://ya.ru\"' && \
 sudo sed -i "s|KIOSKURLREBIND|$KIOSKURLREBIND|" /app/remote/chrome.json && \
 sudo sed -i "s|KIOSKURLREBIND|$KIOSKURLREBIND|" /app/compose/remote.yml && \
 sudo sed -i "s|KIOSKURLREBIND|$KIOSKURLREBIND|" /app/remote/extensions/navi/script.js && \
