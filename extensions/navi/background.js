@@ -44,7 +44,7 @@ chrome.windows.onCreated.addListener((window) => {
 chrome.webNavigation.onErrorOccurred.addListener((data) => {
  var errs = "net::ERR_BLOCKED_BY_ADMINISTRATOR;net::ERR_NAME_NOT_RESOLVED;net::ERR_CONNECTION_FAILED;net::ERR_CONNECTION_RESET;net::ERR_EMPTY_RESPONSE;net::ERR_FAILED;net::ERR_CONNECTION_REFUSED;net::ERR_INTERNET_DISCONNECTED";
  if (errs.indexOf(data.error) != -1) {
-	var Page = GetPageName(data.error)
+  var Page = GetPageName(data.error)
   chrome.tabs.update(data.tabId, { url: Page });
  }
 });
