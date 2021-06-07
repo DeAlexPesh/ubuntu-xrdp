@@ -151,7 +151,7 @@ rdp_layout_ru=ru,us
 keyboard_type=4
 keyboard_type=7
 keyboard_subtype=1
-options=grp:ctrl_shift_toggle,grp:alt_shift_toggle,grp:win_space_toggle
+options=grp:ctrl_shift_toggle
 rdp_layouts=default_rdp_layouts
 layouts_map=layouts_map_ru
 EOT' \
