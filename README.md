@@ -20,8 +20,7 @@ sudo chmod -R 775 /app/images/remote/
 <i>// FORMAT: | id | username | password-hash | list-of-supplemental-groups |
 // GET HASH: openssl passwd -1 'PASSWORD'</i>
 999 ubuntu $1$PNlonRVV$r4ngGPIFvzT5JGFX1MRs9/ sudo
-<i>...
-N ... ... ...</i>
+<i>...</i>
 </pre>
 
 <pre><code>sudo chmod +x /app/remote/user-list-gen.sh && \
