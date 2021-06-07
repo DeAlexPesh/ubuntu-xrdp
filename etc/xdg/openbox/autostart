@@ -12,7 +12,7 @@ xset -dpms
 # setxkbmap -option terminate:ctrl_alt_bksp
 # setxkbmap -option startx:alt_x
 # --- keyboard layout change ALT-SHIFT
-setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:alt_shift_toggle,grp:ctrl_shift_toggle,grp:win_space_toggle
+setxkbmap -model pc105 -layout us,ru -variant qwerty -option grp:grp:ctrl_shift_toggle,alt_shift_toggle,grp:win_space_toggle
 # --- only left mouse button
 xmodmap -e "pointer = 1 2 32 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31"
 # --- disable keys
