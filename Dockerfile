@@ -144,8 +144,8 @@ RUN mkdir /var/run/dbus \
  && bash -c 'cat <<EOT >> /etc/xrdp/xrdp_keyboard.ini
 
 [layouts_map_ru]
-rdp_layout_us=ru,us
-rdp_layout_ru=ru,us
+rdp_layout_us=us,ru
+rdp_layout_ru=us,ru
 
 [rdp_keyboard_ru]
 keyboard_type=4
